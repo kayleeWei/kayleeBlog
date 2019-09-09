@@ -1,0 +1,17 @@
+<% if(theme.comment.gitalk_owner && theme.comment.gitalk_admin && theme.comment.gitalk_repo && theme.comment.gitalk_client_id && theme.comment.gitalk_client_secret) { %>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '<%= theme.comment.gitalk_client_id %>',
+        clientSecret: '<%= theme.comment.gitalk_client_secret %>',
+        // id: window.location.pathname,
+        id: (location.pathname).split("/").pop().substring(0, 49),
+        repo: '<%= theme.comment.gitalk_repo %>',
+        owner: '<%= theme.comment.gitalk_owner %>',
+        admin: '<%= theme.comment.gitalk_admin %>'
+    })
+    gitalk.render('gitalk-container')
+</script>
+<% } %>
