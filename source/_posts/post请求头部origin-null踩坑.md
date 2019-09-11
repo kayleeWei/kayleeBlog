@@ -17,7 +17,7 @@ date: 2019-09-10 19:51:46
 
 ## 解决方法：
 
-### 方法一：通过node层转发java请求
+### 方法一：在client和server之间加一层请求转发，以node为例，通过node层转发java请求
 
 在node层转发java请求时，手动增加origin: 'xxx'字段，以express为例：
 
